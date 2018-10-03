@@ -12,5 +12,6 @@ update
 ./npm.sh
 ./symlinks.sh
 ./maven.sh
+./oh-my-zsh.sh
 ./cleanup.sh
 ./restart.sh
