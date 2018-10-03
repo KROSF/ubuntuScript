@@ -7,7 +7,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 update
 upgrade
 ./repositories.sh
-update
 ./packages.sh
 ./npm.sh
 ./symlinks.sh

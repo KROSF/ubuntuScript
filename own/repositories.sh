@@ -16,10 +16,12 @@ add_to_source_list "https://dl.yarnpkg.com/debian/ stable main" "yarn.list"
 # vscode
 add_key "https://packages.microsoft.com/keys/microsoft.asc"
 add_to_source_list "[arch=amd64] https://packages.microsoft.com/repos/vscode stable main" "vscode.list"
-
+update
 add_ppa "communitheme/ppa"
 add_ppa "papirus/papirus"
 add_ppa "otto-kesselgulasch/gimp"
 add_ppa "wireshark-dev/stable"
 add_ppa "cpick/hub"
 add_ppa "thomas-schiex/blender"
+update
+update

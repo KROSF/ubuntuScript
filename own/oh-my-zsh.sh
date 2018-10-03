@@ -8,7 +8,7 @@ GIST=2a8d6af7b7505488b14ec023a930590b
 print_in_purple "\n   Oh-My-Zsh\n\n"
 
 execute \
-        "curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh && ./install.sh" \
+        "$(sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)")" \
         "Instalando"
 execute \
         "git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k" \
