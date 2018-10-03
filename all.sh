@@ -34,57 +34,58 @@ function repositories {
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
     # CLANG
     wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add
-    apt-add-repository "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-6.0 main"
+    sudo apt-add-repository "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-6.0 main"
     #Communitheme
-    add-apt-repository ppa:communitheme/ppa
+    sudo add-apt-repository ppa:communitheme/ppa
     #Papirus
-    add-apt-repository ppa:papirus/papirus
+    sudo add-apt-repository ppa:papirus/papirus
     #Yarn
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
     #Gimp
-    add-apt-repository ppa:otto-kesselgulasch/gimp
+    sudo add-apt-repository ppa:otto-kesselgulasch/gimp
     #Wireshark
-    add-apt-repository ppa:wireshark-dev/stable
+    sudo add-apt-repository ppa:wireshark-dev/stable
     #Hub
-    add-apt-repository ppa:cpick/hub
+    sudo add-apt-repository ppa:cpick/hub
     #Blender
-    add-apt-repository ppa:thomas-schiex/blender
+    sudo add-apt-repository ppa:thomas-schiex/blender
 }
 
 function packages {
     PACKAGES=(
+        blender
+        bluegriffon
         build-essential
-        ubuntu-communitheme-session
-        papirus-icon-theme
-        gnome-tweak-tool
         clang-6.0
+        clang-format-6.0
         clang-tools-6.0
+        code
+        gdebi
+        gimp
+        gnome-tweak-tool
+        hub
         libclang-common-6.0-dev
         libclang1-6.0
+        libfuzzer-6.0-dev
         libllvm6.0
+        lld-6.0
         lldb-6.0
         llvm-6.0
         llvm-6.0-dev
         llvm-6.0-runtime
-        clang-format-6.0
-        python-clang-6.0
-        lld-6.0
-        libfuzzer-6.0-dev
-        code
+        net-tools
         nodejs
         npm
         openjdk-8-jdk
-        yarn
-        bluegriffon
-        gdebi-core
-        gimp
-        wireshark
-        hub
+        papirus-icon-theme
+        python-clang-6.0
+        ubuntu-communitheme-session
         virtualbox
         virtualbox-ext-pack
-        net-tools
-        blender
+        wireshark
+        yarn
+        zsh
     )
     bold 'Instalando Paquetes ...'
     sudo apt-get install -y ${PACKAGES[@]}
@@ -94,12 +95,9 @@ function gdebi_packages {
     cd /tmp
     wget http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb
     wget https://github.com/zeit/hyper/releases/download/2.1.0-canary.2/hyper_2.1.0-canary.2_amd64.deb
-    GDEBI=(
-        bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb
-        hyper_2.1.0-canary.2_amd64.deb
-    )
     bold 'Instalando Paquetes .deb...'
-    sudo gdebi ${GDEBI[@]}
+    sudo gdebi bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb
+    sudo gdebi hyper_2.1.0-canary.2_amd64.deb
     cd $HOME
 }
 

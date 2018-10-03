@@ -17,7 +17,7 @@ function main {
     echo -en '\033[1;34mInserta tu opcion : \033[0m'
     read REPLY
     case $REPLY in
-        1) echo "" && ubuntuAll;; # Instalar Todo
+        1) echo "" && ubuntuAll;; # Instalar todo
         2) echo "" && oh-my-zsh;; # Instalar config terminal.
         3) echo "" && xampp_install;; # Instalar config terminal.
         [Ss]* ) echo '' && quit;; # Quit
