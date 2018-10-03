@@ -5,6 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "./utils.sh"
 
 print_in_purple "\n   Agregando Repositorios\n\n"
+install_package "Apt Transport https" "apt-transport-https"
 install_package "Wget" "wget"
 # llvm
 add_key "https://apt.llvm.org/llvm-snapshot.gpg.key"

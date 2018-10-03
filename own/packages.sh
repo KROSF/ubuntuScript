@@ -6,7 +6,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   Packages\n\n"
 
-install_package "Apt Transport https" "apt-transport-https"
 install_package "Blender" "blender"
 install_package "Build Essential" "build-essential"
 install_package "Communitheme" "ubuntu-communitheme-session"
