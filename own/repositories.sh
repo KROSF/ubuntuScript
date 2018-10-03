@@ -24,4 +24,3 @@ add_ppa "wireshark-dev/stable"
 add_ppa "cpick/hub"
 add_ppa "thomas-schiex/blender"
 update
-update
